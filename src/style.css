@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url("./assets/cloudyeve.jpeg");
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(3rem);
+}
+
+svg, img{
+    width: 1.5rem;   
+    height: 1.5rem;
+    fill: currentColor; 
+    align-self: center;
+    justify-self: center;
+}
+
+.main-container{
+    height: 45rem;
+    width: 65rem;
+    background-image: url("./assets/cloudyeve.jpeg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 5rem;
+    text-shadow: 1px 1px 5px rgb(35, 35, 35);
+}
+
+.enter-location{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+form{
+    display: flex;
+    margin: 1rem;
+}
+
+.search-bar{
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    background-color: white;
+    border-radius: 0.75rem;
+    height: 2rem;
+    width: 20rem;
+    padding: 0rem 0.1rem;
+    margin: 0rem 1rem;
+}
+
+.search-icon{
+    color: black;
+}
+
+#place-name{
+    border: none;
+    height: 1.5rem;
+    background: transparent;
+    align-self: center;
+}
+
+#submit-btn{
+    text-decoration: none;
+    border: none;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.display-container{
+    width: 100%;
+    display: flex;
+    margin: 1rem;
+}
+
+.display-left{
+    width: 50%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 2fr 1fr;
+    align-items: center;
+}
+
+.display-place{
+    font-size: 3rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 5px rgb(35, 35, 35);
+}
+
+.display-date{
+    font-size: 1.5rem;
+    font-weight: 450;
+}
+
+.icon-container{
+}
+
+.main-icon{
+    height: 6rem;
+    width: 6rem;
+}
+
+.icon-description{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.display-right{
+    width: 50%;
+    display: grid;
+    grid-template-rows: 3fr 2fr;
+    justify-content: end;
+    align-items: center;
+}
+
+.temp{
+    font-size: 10rem;
+    font-weight: 50;
+    line-height: 0;
+}
+
+.minmax-container{
+    display: flex;
+    font-size: 4rem;
+    font-weight: 200;
+}
+
+.days-list-container{
+    flex:1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+    margin: 1rem 0rem;
+}
+
+.days-btn{
+    background: transparent;
+    border: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+.days-btn:hover{
+    cursor: pointer;
+    background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2))
+}
+
+.btn-date{
+    font-size: 1.5rem;
+}
+
+.btn-icon{
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-img{
+    height: 5rem;
+    width: 5rem;
+}
+
+.btn-temp{
+    font-size: 1.5rem;
+}
