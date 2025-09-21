@@ -1,3 +1,7 @@
+import { getWeather, getDays, getCityName } from "./weatherData.js";
+
+// await getWeather("kathmandu");
+
 const mainContainer = document.querySelector(".main-container");
 
 const daysListContainer = document.createElement("div");
