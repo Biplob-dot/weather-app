@@ -7,20 +7,8 @@ async function getWeather(location) {
 function getRequiredInfo (data) {
   const cityName = data.address;
   const days = data.days.slice(0, 5);
+  console.log(days);
   return { cityName, days }; // return fresh data
 }
 
 export { getWeather };
-
-
-class Day{
-    constructor(name, date, icon, temp, maxTemp, minTemp,uvIndex){
-        this.name = name;
-        this.date = date;
-        this.icon = icon;
-        this.temp = temp;
-        this.maxTemp = maxTemp;
-        this.minTemp = minTemp;
-        this.uvIndex = uvIndex;
-    }
-}

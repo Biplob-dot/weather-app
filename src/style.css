@@ -11,7 +11,7 @@ body{
     justify-content: center;
     align-items: center;
     color: white;
-    background: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url("./assets/cloudyeve.jpeg");
+    background: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url("./assets/cloudymorning.jpeg");
     background-size: cover;
     background-position: center;
     backdrop-filter: blur(3rem);
@@ -28,7 +28,7 @@ svg, img{
 .main-container{
     height: 45rem;
     width: 65rem;
-    background-image: url("./assets/cloudyeve.jpeg");
+    background-image: url("./assets/cloudymorning.jpeg");
     background-size: cover;
     background-position: center;
     border-radius: 2rem;
@@ -136,6 +136,7 @@ form{
     display: flex;
     font-size: 4rem;
     font-weight: 200;
+    justify-content: center;
 }
 
 .days-list-container{

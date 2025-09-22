@@ -1,5 +1,39 @@
 import { getWeather} from "./weatherData.js";
+import cloudy from './assets/cloudy-icon.png';
+import lightRain1 from './assets/lightRain1.png';
+import rainBackground from './assets/rain.jpg';
+import cloudyBackground from './assets/cloudymorning.jpeg';
 
+function capitalizeFirstLetter(string) {
+  if (typeof string !== 'string' || string.length === 0) {
+    return string;
+  }
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+export function checkIcon(icon) {
+    switch(icon){
+        case "rain":
+            return lightRain1;
+        case "partly-cloudy-day":
+            return cloudy;
+        default:
+            return cloudy;
+    }
+}
+
+function checkBackground(background){
+    switch(background){
+        case "rain":
+            return rainBackground;
+        case "partly-cloudy-day":
+            return cloudyBackground;
+        default:
+            return cloudyBackground;
+    }
+}
+
+const body = document.querySelector("body");
 const mainContainer = document.querySelector(".main-container");
 
 const displayContainer = document.createElement("div");
@@ -8,6 +42,10 @@ mainContainer.appendChild(displayContainer);
 
 export const buildDisplay = async (location) => {
     const { cityName, days } = await getWeather(location);
+
+    body.style.background = `linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(${checkBackground(days[0].icon)})`;
+    mainContainer.style.backgroundImage = `url(${checkBackground(days[0].icon)})`;
+
 
     displayContainer.innerHTML = "";
 
@@ -19,7 +57,7 @@ export const buildDisplay = async (location) => {
 
     const displayPlace = document.createElement("div");
     displayPlace.className = "display-place";
-    displayPlace.textContent = cityName;
+    displayPlace.textContent = capitalizeFirstLetter(cityName);
     displayLeft.appendChild(displayPlace);
 
     const displayDate = document.createElement("div");
@@ -33,6 +71,7 @@ export const buildDisplay = async (location) => {
 
     const mainIcon = document.createElement("img");
     mainIcon.className = "main-icon";
+    mainIcon.src = checkIcon(days[0].icon);
     iconContainer.appendChild(mainIcon);
 
     const iconDescription = document.createElement("div");
