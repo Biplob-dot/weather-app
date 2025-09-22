@@ -1,5 +1,5 @@
 import { getWeather } from "./weatherData.js";
-import { checkIcon } from "./display.js";
+import { buildDisplay, checkIcon } from "./display.js";
 
 const mainContainer = document.querySelector(".main-container");
 
@@ -7,10 +7,8 @@ const daysListContainer = document.createElement("div");
 daysListContainer.className = "days-list-container";
 mainContainer.appendChild(daysListContainer);
 
-export const buildList = async(location) => {
+export const buildList = async(cityName,days) => {
 let tempDate = "";
-
-    const { days } = await getWeather(location);
 
     daysListContainer.innerHTML = "";
 
@@ -19,6 +17,10 @@ let tempDate = "";
         const daysBtn = document.createElement("button");
         daysBtn.className = "days-btn";
         daysListContainer.appendChild(daysBtn);
+
+        daysBtn.addEventListener("click", () => {
+            buildDisplay(cityName,days[i]);
+        })
         
         const btnDate = document.createElement("div");
         btnDate.className = 'btn-date';
